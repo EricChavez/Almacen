@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { APP_ROUTING } from './app.routes';
 import { OrdenCompraComponent } from './Components/orden-compra/orden-compra.component';
 import { ClasificacionmaterialComponent } from './Components/clasificacionmaterial/clasificacionmaterial.component';
+import { GlobalserviceService } from './services/globalservice.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ClasificacionmaterialComponent } from './Components/clasificacionmateri
     HttpModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [GlobalserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
