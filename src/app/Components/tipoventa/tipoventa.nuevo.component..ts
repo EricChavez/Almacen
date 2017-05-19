@@ -1,5 +1,5 @@
+import { TipoventaService } from './../../services/tipoventa.service';
 import { Component, OnInit } from '@angular/core';
-import { DepartamentoService } from '../../services/departemento.service';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { NotificationsService } from 'angular2-notifications';
 import { Router } from '@angular/router';
@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
     templateUrl: './departamento.nuevo.component.html',
 
 })
-export class DepartamentoNuevoComponent implements OnInit {
+export class TipoventaNuevoComponent implements OnInit {
 
     forma: FormGroup;
     Tittle: string;
     constructor(
         private _notificationsService: NotificationsService,
-        private _DepartamentoService: DepartamentoService,
+        private _TipoventaService: TipoventaService,
         private _Router: Router
     ) { }
 
@@ -23,19 +23,19 @@ export class DepartamentoNuevoComponent implements OnInit {
             'Descripcion': new FormControl('', Validators.required),
             'Activo': new FormControl('')
         });
-        this.Tittle = 'Nuevo departamento';
+        this.Tittle = 'Nuevo tipo venta';
     }
 
     guardarCambios() {
         const obj = {
-            DepartamentoId: '',
+            TipoVentaId: '',
             Descripcion: this.forma.value.Descripcion,
             Activo: this.forma.value.Activo
         };
-        this._DepartamentoService.AddDepartamento(obj).subscribe(data => {
+        this._TipoventaService.AddTipoventa(obj).subscribe(data => {
             console.log(data);
             this.showSuccess();
-            this._Router.navigate(['/home/departamento']);
+            this._Router.navigate(['/home/tipoventa']);
         },
             error => {
                 this.serverError(error);
