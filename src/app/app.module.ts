@@ -1,4 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserAnimationsModule } from '@angular/platform-browser';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -7,24 +10,49 @@ import { HomeComponent } from './components/home/home.component';
 import { APP_ROUTING } from './app.routes';
 import { OrdenCompraComponent } from './Components/orden-compra/orden-compra.component';
 import { ClasificacionmaterialComponent } from './Components/clasificacionmaterial/clasificacionmaterial.component';
-import { GlobalserviceService } from './services/globalservice.service';
+
+
+import { Globalservice } from './services/globalservice.service';
+import {CategoriaService} from './services/categoria.service'
+import {DepartamentoService} from './services/departemento.service'
+import { CategoriaComponent } from './Components/categoria/categoria.component';
+import { CategoriaNuevaComponent } from './Components/categoria/categoria.nueva.component';
+import { CategoriaEditaComponent } from './Components/categoria/categoria.edita.component';
+
+import { TopnavbarComponent } from './Components/topnavbar/topnavbar.component';
+import { MenuComponent } from './Components/menu/menu.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { BlockUIModule } from 'ng-block-ui';
+import { DepartamentoComponent } from './Components/departamento/departamento.component';
+import { DepartamentoNuevoComponent } from './Components/departamento/departamento.nuevo.component';
+
+//import { SimpleNotificationsModule } from 'angular2-notifications';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     OrdenCompraComponent,   
-    ClasificacionmaterialComponent
-    
+    ClasificacionmaterialComponent, CategoriaComponent, TopnavbarComponent, MenuComponent, FooterComponent
+    ,CategoriaNuevaComponent,CategoriaEditaComponent, DepartamentoComponent,DepartamentoNuevoComponent
   ],
   imports: [
+    SimpleNotificationsModule.forRoot(),
     BrowserModule,
+    
+
+    NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    BlockUIModule,
     APP_ROUTING
   ],
-  providers: [GlobalserviceService],
+  providers: [Globalservice,CategoriaService,DepartamentoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

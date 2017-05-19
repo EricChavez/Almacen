@@ -1,0 +1,91 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+  {{Tittle}}
+    <small>catálogo</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+    <li class="active">Here</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="panel">
+    <div class="panel-body">
+      <form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+
+        <div class="form-group" [ngClass]="{'has-error':!forma.controls['Nombre'].valid}">
+          <label class="control-label">Nombre</label>
+          <input class="form-control" type="text" placeholder="Nombre" formControlName="Nombre">
+          <span class="help-block" *ngIf="forma.get('Nombre').errors?.required">
+           El nombre es necesario
+           </span>
+        </div>
+
+
+        <div class="form-group" [ngClass]="{'has-error':!forma.controls['Descripcion'].valid}">
+          <label class="control-label">Descripción</label>
+          <input class="form-control" type="text" placeholder="Descripción" formControlName="Descripcion">
+          <span class="help-block" *ngIf="forma.get('Descripcion').errors?.required">
+           La descripción es necesaria
+           </span>
+        </div>
+
+        <div class="form-group" [ngClass]="{'has-error':!forma.controls['Departamento'].valid}">
+          <label class="control-label">Departamento</label>
+          <select formControlName="Departamento" class="form-control" >
+            <option value="">Selecciona</option>
+          <option *ngFor="let c of Departamentos" [ngValue]="c.DepartamentoId" >{{c.Descripcion}}</option>
+</select>
+           <span class="help-block" *ngIf="forma.get('Departamento').errors?.required">
+            El Departamento es necesaria
+            </span>
+        </div>
+
+
+
+
+
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Activo</label>
+          <div class="col-8">
+            <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" formControlName="Activo">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Activo</span>
+</label>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label">&nbsp;</label>
+          <div class="input-group col-md-8">
+            <button type="submit" class="btn bg-purple margin">
+        Guardar
+      </button>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-2 col-form-label">&nbsp;</label>
+          <div class="input-group col-md-8">
+            <button type="button" class="btn bg-default" [routerLink]="['/home/categoria']">
+        Cancelar
+      </button>
+          </div>
+        </div>
+
+        {{forma.valid}} {{forma.status}}
+      </form>
+
+
+    </div>
+  </div>
+
+
+
+</section>
+<!-- /.content -->

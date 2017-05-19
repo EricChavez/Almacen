@@ -17,7 +17,7 @@ forma: FormGroup;
 
     this.forma = new FormGroup({
       'descripcion': new FormControl('', Validators.required),
-      'status': new FormControl('', Validators.required)
+      'status': new FormControl('',)
       //'id': new FormControl('', Validators.required)
     });
    }

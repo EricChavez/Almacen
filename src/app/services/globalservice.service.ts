@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class GlobalserviceService {
-  url: string = "http://192.168.50.31:8000";
+export class Globalservice{
+  url: string = "http://localhost:48008";
 
   constructor() { }
   getUrl() {
