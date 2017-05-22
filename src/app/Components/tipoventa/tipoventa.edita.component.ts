@@ -26,7 +26,7 @@ export class TipoventaEditaComponent implements OnInit {
             (params: Params) => {
                 this.id = params['id'];
             }
-        );        
+        );
         this.forma = new FormGroup({
             'Descripcion': new FormControl('', Validators.required),
             'Activo': new FormControl('')
@@ -46,11 +46,11 @@ export class TipoventaEditaComponent implements OnInit {
 
     guardarCambios() {
         const obj = {
-            TipoVentaId: '',
+            TipoVentaId: this.id,
             Descripcion: this.forma.value.Descripcion,
             Activo: this.forma.value.Activo
         };
-        this._TipoventaService.AddTipoventa(obj).subscribe(data => {
+        this._TipoventaService.EditTipoventa(this.id, obj).subscribe(data => {
             console.log(data);
             this.showSuccess();
             this._Router.navigate(['/home/tipoventa']);

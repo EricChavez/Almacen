@@ -1,3 +1,4 @@
+import { ProductoComponent } from './Components/producto/producto.component';
 import { TipoventaEditaComponent } from './Components/tipoventa/tipoventa.edita.component';
 import { TipoventaNuevoComponent } from './Components/tipoventa/tipoventa.nuevo.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,6 +10,7 @@ import { DepartamentoComponent } from './Components/departamento/departamento.co
 import { DepartamentoNuevoComponent } from './Components/departamento/departamento.nuevo.component';
 import { DepartamentoEditaComponent } from './Components/departamento/departamento.edita.component';
 import { TipoventaComponent } from './Components/tipoventa/tipoventa.component';
+
 
 
 const APP_ROUTES: Routes = [
@@ -23,7 +25,8 @@ const APP_ROUTES: Routes = [
             { path: 'editadepartamento/:id', component: DepartamentoEditaComponent },
             { path: 'tipoventa', component: TipoventaComponent },
             { path: 'nuevotipoventa', component: TipoventaNuevoComponent },
-            { path: 'editatipoventa/:id', component: TipoventaEditaComponent }
+            { path: 'editatipoventa/:id', component: TipoventaEditaComponent },
+             { path: 'producto', component: ProductoComponent }
         ]
     },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },

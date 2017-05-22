@@ -28,6 +28,8 @@ import { DepartamentoEditaComponent } from './Components/departamento/departamen
 import { TipoventaComponent } from './Components/tipoventa/tipoventa.component';
 import { TipoventaNuevoComponent } from './Components/tipoventa/tipoventa.nuevo.component';
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
+import { ProductoComponent } from './Components/producto/producto.component';
+import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { ProveedorComponent } from './Components/proveedor/proveedor.component';
     TipoventaComponent,
     TipoventaNuevoComponent,
     TipoventaEditaComponent,
-    ProveedorComponent
+    ProveedorComponent,
+    ProductoComponent,
+    UbicacionComponent
   ],
   imports: [
     SimpleNotificationsModule.forRoot(),
