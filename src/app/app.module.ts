@@ -1,3 +1,5 @@
+import { ProductoService } from './services/producto.service';
+import { UbicacionService } from './services/ubicacion.service';
 import { TipoventaEditaComponent } from './Components/tipoventa/tipoventa.edita.component';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,16 +13,16 @@ import { APP_ROUTING } from './app.routes';
 import { OrdenCompraComponent } from './Components/orden-compra/orden-compra.component';
 import { ClasificacionmaterialComponent } from './Components/clasificacionmaterial/clasificacionmaterial.component';
 import { Globalservice } from './services/globalservice.service';
-import { CategoriaService} from './services/categoria.service';
+import { CategoriaService } from './services/categoria.service';
 import { TipoventaService } from './services/tipoventa.service';
-import { DepartamentoService} from './services/departemento.service';
+import { DepartamentoService } from './services/departemento.service';
 import { CategoriaComponent } from './Components/categoria/categoria.component';
 import { CategoriaNuevaComponent } from './Components/categoria/categoria.nueva.component';
 import { CategoriaEditaComponent } from './Components/categoria/categoria.edita.component';
 import { TopnavbarComponent } from './Components/topnavbar/topnavbar.component';
 import { MenuComponent } from './Components/menu/menu.component';
 import { FooterComponent } from './Components/footer/footer.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { BlockUIModule } from 'ng-block-ui';
 import { DepartamentoComponent } from './Components/departamento/departamento.component';
 import { DepartamentoNuevoComponent } from './Components/departamento/departamento.nuevo.component';
@@ -30,6 +32,7 @@ import { TipoventaNuevoComponent } from './Components/tipoventa/tipoventa.nuevo.
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { ProductoComponent } from './Components/producto/producto.component';
 import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
+
 
 @NgModule({
   declarations: [
@@ -61,14 +64,16 @@ import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
     ReactiveFormsModule,
     HttpModule,
     BlockUIModule,
-    APP_ROUTING
+    APP_ROUTING,
+    UbicacionService,
+    ProductoService
   ],
   providers: [
     Globalservice,
     CategoriaService,
     DepartamentoService,
     TipoventaService
-    ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

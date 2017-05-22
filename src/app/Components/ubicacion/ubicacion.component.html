@@ -1,3 +1,45 @@
-<p>
-  ubicacion works!
-</p>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Ubicación
+    <small>catálogo</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+    <li class="active">Here</li>
+  </ol>
+</section>
+ <button class="btn btn-success" [routerLink]="['/home/nuevaubicacion']">Nuevo</button>
+<!-- Main content -->
+<section class="content">
+  <div class="panel">
+    <div class="panel-body">
+      
+      <table class="table">
+        <thead>
+          <th>ID</th>          
+          <th>DESCRIPCION</th>         
+          <th>ACTIVO</th>
+          <th>OPCIONES</th>
+        </thead>
+        <tbody>
+       <tr *ngFor="let item of tipos | paginate: { itemsPerPage: 10, currentPage: p }">
+           <td>{{item.TipoVentaId}}</td>
+           <td>{{item.Descripcion}}</td>
+           <td>{{item.Activo}}</td>         
+           <td>
+             <button type="button" class="btn btn-warning btn-sm"
+            [routerLink]="['/home/editatipoventa',item.TipoVentaId]">
+             <i class="fa fa-edit"></i></button>
+           </td>
+
+         </tr>
+         </tbody>
+      </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+
+
+
+</section>

@@ -1,15 +1,29 @@
+import { UbicacionService } from './../../services/ubicacion.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-ubicacion',
-  templateUrl: './ubicacion.component.html',
-  styleUrls: ['./ubicacion.component.css']
+  templateUrl: './ubicacion.component.html'
 })
 export class UbicacionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+    private _UbicacionService: UbicacionService
+
+  ) { }
 
   ngOnInit() {
+    this._UbicacionService.GetUbicaciones().subscribe(
+      data => {
+
+      },
+      error => {
+
+      }
+
+    );
   }
 
 }
