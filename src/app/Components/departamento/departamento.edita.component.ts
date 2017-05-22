@@ -3,7 +3,10 @@ import { DepartamentoService } from '../../services/departemento.service';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { NotificationsService } from 'angular2-notifications';
 
+
 import { ActivatedRoute, Router, Params } from '@angular/router';
+
+
 @Component({
     selector: 'app-departamentonuevo',
     templateUrl: './departamento.nuevo.component.html',

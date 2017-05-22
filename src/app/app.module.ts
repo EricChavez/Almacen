@@ -1,3 +1,5 @@
+import { TipoventaEditaComponent } from './Components/tipoventa/tipoventa.edita.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { NgModule } from '@angular/core';
@@ -24,6 +26,9 @@ import { DepartamentoComponent } from './Components/departamento/departamento.co
 import { DepartamentoNuevoComponent } from './Components/departamento/departamento.nuevo.component';
 import { DepartamentoEditaComponent } from './Components/departamento/departamento.edita.component';
 import { TipoventaComponent } from './Components/tipoventa/tipoventa.component';
+import { TipoventaNuevoComponent } from './Components/tipoventa/tipoventa.nuevo.component';
+import { ProveedorComponent } from './Components/proveedor/proveedor.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +44,10 @@ import { TipoventaComponent } from './Components/tipoventa/tipoventa.component';
     DepartamentoComponent,
     DepartamentoNuevoComponent,
     DepartamentoEditaComponent,
-    TipoventaComponent
+    TipoventaComponent,
+    TipoventaNuevoComponent,
+    TipoventaEditaComponent,
+    ProveedorComponent
   ],
   imports: [
     SimpleNotificationsModule.forRoot(),

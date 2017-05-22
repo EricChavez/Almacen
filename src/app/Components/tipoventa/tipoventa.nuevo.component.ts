@@ -4,8 +4,8 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { NotificationsService } from 'angular2-notifications';
 import { Router } from '@angular/router';
 @Component({
-    selector: 'app-departamentonuevo',
-    templateUrl: './departamento.nuevo.component.html',
+    selector: 'app-tipoventanuevo',
+    templateUrl: './tipoventa.nuevo.component.html',
 
 })
 export class TipoventaNuevoComponent implements OnInit {
@@ -23,6 +23,7 @@ export class TipoventaNuevoComponent implements OnInit {
             'Descripcion': new FormControl('', Validators.required),
             'Activo': new FormControl('')
         });
+        
         this.Tittle = 'Nuevo tipo venta';
     }
 
