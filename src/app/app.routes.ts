@@ -1,3 +1,4 @@
+import { UbicacionEditaComponent } from './Components/ubicacion/ubicacion.edita.component';
 import { UbicacionNuevaComponent } from './Components/ubicacion/ubicacion.nueva.component';
 import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
 import { ProductoComponent } from './Components/producto/producto.component';
@@ -31,7 +32,8 @@ const APP_ROUTES: Routes = [
             { path: 'editatipoventa/:id', component: TipoventaEditaComponent },
             { path: 'producto', component: ProductoComponent },
             { path: 'ubicacion', component: UbicacionComponent },
-             { path: 'nuevaubicacion', component: UbicacionNuevaComponent }
+             { path: 'nuevaubicacion', component: UbicacionNuevaComponent },
+             { path: 'editaubicacion/:id', component: UbicacionEditaComponent }
         ]
     },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },

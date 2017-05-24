@@ -28,6 +28,33 @@ export class UbicacionService {
       .map(res => res.json());
   }
 
+
+   public GetUbicacion(id: Number) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+    // headers.append('Authorization', `Token ${this._localStorage.get('token')}`);
+    const options = new RequestOptions({ headers: headers, method: RequestMethod.Get });
+    const url = this._GlobalurlService.getUrl() + '/api/Ubicacion/'+ id;
+    return this.http.get(url, options)
+      .map(res => res.json());
+  }
+
+ public EditUbicacion(id: number, obj: any) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+    const data = {
+      UbicacionId: id,
+      Descripcion: obj.Descripcion,
+      Activo: obj.Activo
+    };
+    const body = JSON.stringify(data);
+    const options = new RequestOptions({ headers: headers, method: RequestMethod.Put });
+    const url = this._GlobalurlService.getUrl() + '/api/Ubicacion/' + id;
+    return this.http.put(url, body, options)
+      .map(res => res.json());
+  }
+
+
   public AddUbicacion(object) {
     const data = {
       UbicacionId: 0,

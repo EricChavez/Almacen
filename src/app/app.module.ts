@@ -1,3 +1,4 @@
+import { UbicacionEditaComponent } from './Components/ubicacion/ubicacion.edita.component';
 import { UbicacionNuevaComponent } from './Components/ubicacion/ubicacion.nueva.component';
 import { ProductoService } from './services/producto.service';
 import { UbicacionService } from './services/ubicacion.service';
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { APP_ROUTING } from './app.routes';
 import { OrdenCompraComponent } from './Components/orden-compra/orden-compra.component';
-import { ClasificacionmaterialComponent } from './Components/clasificacionmaterial/clasificacionmaterial.component';
+
 import { Globalservice } from './services/globalservice.service';
 import { CategoriaService } from './services/categoria.service';
 import { TipoventaService } from './services/tipoventa.service';
@@ -33,6 +34,7 @@ import { TipoventaNuevoComponent } from './Components/tipoventa/tipoventa.nuevo.
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { ProductoComponent } from './Components/producto/producto.component';
 import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
+import { TipounidadComponent } from './Components/tipounidad/tipounidad.component';
 
 
 @NgModule({
@@ -40,7 +42,6 @@ import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
     AppComponent,
     HomeComponent,
     OrdenCompraComponent,
-    ClasificacionmaterialComponent,
     CategoriaComponent,
     TopnavbarComponent,
     MenuComponent,
@@ -56,7 +57,9 @@ import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
     ProveedorComponent,
     ProductoComponent,
     UbicacionComponent,
-    UbicacionNuevaComponent
+    UbicacionNuevaComponent,
+    UbicacionEditaComponent,
+    TipounidadComponent
   ],
   imports: [
     SimpleNotificationsModule.forRoot(),
