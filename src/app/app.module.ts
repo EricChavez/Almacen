@@ -1,3 +1,4 @@
+import { TipounidadService } from './services/tipounidad.service';
 import { UbicacionEditaComponent } from './Components/ubicacion/ubicacion.edita.component';
 import { UbicacionNuevaComponent } from './Components/ubicacion/ubicacion.nueva.component';
 import { ProductoService } from './services/producto.service';
@@ -35,6 +36,7 @@ import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { ProductoComponent } from './Components/producto/producto.component';
 import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
 import { TipounidadComponent } from './Components/tipounidad/tipounidad.component';
+
 
 
 @NgModule({
@@ -77,8 +79,9 @@ import { TipounidadComponent } from './Components/tipounidad/tipounidad.componen
     CategoriaService,
     DepartamentoService,
     TipoventaService,
-      UbicacionService,
-    ProductoService
+    UbicacionService,
+    ProductoService,
+    TipounidadService
   ],
   bootstrap: [AppComponent]
 })

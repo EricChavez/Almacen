@@ -1,15 +1,26 @@
+import { TipounidadService } from './../../services/tipounidad.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-tipounidad',
-  templateUrl: './tipounidad.component.html',
-  styleUrls: ['./tipounidad.component.css']
+  templateUrl: './tipounidad.component.html'  
 })
 export class TipounidadComponent implements OnInit {
+Unidades:any[];
+  constructor(
+ private _TipounidadService:TipounidadService
 
-  constructor() { }
+  ) { }
 
   ngOnInit() {
+this._TipounidadService.GetTipoUnidades().subscribe(
+  data=>{
+console.log(data);
+  },error=>{
+
+  }
+);
   }
 
 }
