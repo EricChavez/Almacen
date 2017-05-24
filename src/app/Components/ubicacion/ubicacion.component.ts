@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UbicacionComponent implements OnInit {
 
+  ubicaciones: any[];
   constructor(
 
     private _UbicacionService: UbicacionService
@@ -17,10 +18,10 @@ export class UbicacionComponent implements OnInit {
   ngOnInit() {
     this._UbicacionService.GetUbicaciones().subscribe(
       data => {
-
+        this.ubicaciones = data;
       },
       error => {
-
+        console.log(error);
       }
 
     );

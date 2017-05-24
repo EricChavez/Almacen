@@ -23,13 +23,13 @@
           <th>OPCIONES</th>
         </thead>
         <tbody>
-       <tr *ngFor="let item of tipos | paginate: { itemsPerPage: 10, currentPage: p }">
-           <td>{{item.TipoVentaId}}</td>
+       <tr *ngFor="let item of ubicaciones | paginate: { itemsPerPage: 10, currentPage: p }">
+           <td>{{item.UbicacionId}}</td>
            <td>{{item.Descripcion}}</td>
            <td>{{item.Activo}}</td>         
            <td>
              <button type="button" class="btn btn-warning btn-sm"
-            [routerLink]="['/home/editatipoventa',item.TipoVentaId]">
+            [routerLink]="['/home/editaubicacion',item.UbicacionId]">
              <i class="fa fa-edit"></i></button>
            </td>
 

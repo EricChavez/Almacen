@@ -1,3 +1,4 @@
+import { UbicacionNuevaComponent } from './Components/ubicacion/ubicacion.nueva.component';
 import { ProductoService } from './services/producto.service';
 import { UbicacionService } from './services/ubicacion.service';
 import { TipoventaEditaComponent } from './Components/tipoventa/tipoventa.edita.component';
@@ -54,7 +55,8 @@ import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
     TipoventaEditaComponent,
     ProveedorComponent,
     ProductoComponent,
-    UbicacionComponent
+    UbicacionComponent,
+    UbicacionNuevaComponent
   ],
   imports: [
     SimpleNotificationsModule.forRoot(),
@@ -64,15 +66,16 @@ import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
     ReactiveFormsModule,
     HttpModule,
     BlockUIModule,
-    APP_ROUTING,
-    UbicacionService,
-    ProductoService
+    APP_ROUTING
+
   ],
   providers: [
     Globalservice,
     CategoriaService,
     DepartamentoService,
-    TipoventaService
+    TipoventaService,
+      UbicacionService,
+    ProductoService
   ],
   bootstrap: [AppComponent]
 })
