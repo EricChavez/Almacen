@@ -16,6 +16,7 @@ Unidades:any[];
   ngOnInit() {
 this._TipounidadService.GetTipoUnidades().subscribe(
   data=>{
+    this.Unidades=data;
 console.log(data);
   },error=>{
 

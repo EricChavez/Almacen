@@ -1,3 +1,4 @@
+import { TipounidadNuevoComponent } from './Components/tipounidad/tipounidad.nuevo.component';
 import { TipounidadService } from './services/tipounidad.service';
 import { UbicacionEditaComponent } from './Components/ubicacion/ubicacion.edita.component';
 import { UbicacionNuevaComponent } from './Components/ubicacion/ubicacion.nueva.component';
@@ -61,7 +62,8 @@ import { TipounidadComponent } from './Components/tipounidad/tipounidad.componen
     UbicacionComponent,
     UbicacionNuevaComponent,
     UbicacionEditaComponent,
-    TipounidadComponent
+    TipounidadComponent,
+    TipounidadNuevoComponent
   ],
   imports: [
     SimpleNotificationsModule.forRoot(),

@@ -43,7 +43,7 @@ public GetTipoUnidades() {
        'UnidadId': 0,
        'Descripcion': object.Descripcion,
       'Activo' : object.Activo
-    }
+    };
     headers.append('Content-Type', 'application/JSON');
     // headers.append('Authorization', `Token ${this._localStorage.get('token')}`);
      const body = JSON.stringify(data);
