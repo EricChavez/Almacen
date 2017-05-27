@@ -92,7 +92,4 @@ export class UbicacionEditaComponent implements OnInit {
             }
         );
     }
-
-
-
 }

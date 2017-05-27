@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { CategoriaService } from '../../services/categoria.service';
-import { DepartamentoService } from '../../services/departemento.service'
+import { DepartamentoService } from '../../services/departemento.service';
 import { Router } from '@angular/router';
 import { NotificationsService } from 'angular2-notifications';
 @Component({
@@ -17,7 +17,6 @@ export class CategoriaNuevaComponent implements OnInit {
     private _DepartamentoService: DepartamentoService,
     private _Router: Router,
     private _notificationsService: NotificationsService
-
 
   ) {
     this.forma = new FormGroup({
