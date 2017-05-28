@@ -15,7 +15,7 @@ import { DepartamentoComponent } from './Components/departamento/departamento.co
 import { DepartamentoNuevoComponent } from './Components/departamento/departamento.nuevo.component';
 import { DepartamentoEditaComponent } from './Components/departamento/departamento.edita.component';
 import { TipoventaComponent } from './Components/tipoventa/tipoventa.component';
-
+import { ProductoNuevoComponent } from './Components/producto/producto.nuevo.component';
 
 
 
@@ -34,6 +34,7 @@ const APP_ROUTES: Routes = [
             { path: 'nuevotipoventa', component: TipoventaNuevoComponent },
             { path: 'editatipoventa/:id', component: TipoventaEditaComponent },
             { path: 'producto', component: ProductoComponent },
+            { path: 'nuevoproducto', component: ProductoNuevoComponent },
             { path: 'ubicacion', component: UbicacionComponent },
              { path: 'nuevaubicacion', component: UbicacionNuevaComponent },
              { path: 'editaubicacion/:id', component: UbicacionEditaComponent },

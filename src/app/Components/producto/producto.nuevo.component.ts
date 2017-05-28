@@ -45,18 +45,46 @@ export class ProductoNuevoComponent implements OnInit {
             'TipoVentaId': new FormControl('', Validators.required),
             'UnidadId': new FormControl('', Validators.required),
             'CantidadMinima': new FormControl('', Validators.required),
-            'Credito': new FormControl('', Validators.required),
+            'UbicacionId': new FormControl('', Validators.required),            
+            'Activo': new FormControl('', Validators.required),
             'Serie': new FormControl('', Validators.required),
             'DevMatriz': new FormControl('', Validators.required),
             'CantidadOrden': new FormControl('', Validators.required),
             'Precioventa': new FormControl('', Validators.required),
             'PrecioCredito': new FormControl('', Validators.required),
-            'FechaIngreso': new FormControl('', Validators.required),
+            'FechaIngreso': new FormControl(''),
             'FechaBaja': new FormControl('')
         });
         this.Tittle = 'Nuevo producto';
 
+    } 
+
+    guardarCambios(){
+
+var object={
+'ProductoId':0,
+'UPC':this.forma.value.UPC,
+'Nombre':this.forma.value.Nombre,
+'Descripcion':this.forma.value.Descripcion,
+'CategoriaId': this.forma.value.CategoriaId,
+'TipoVentaId':this.forma.value.TipoVentaId,
+'UnidadId':this.forma.value.UnidadId,
+'CantidadMinima': this.forma.value.CantidadMinima,
+'Serie':this.forma.value.Serie,
+'DevMatriz':this.forma.value.DevMatriz,
+'CantidadOrden':this.forma.value.CantidadOrden,
+'Precioventa':this.forma.value.Precioventa,
+'PrecioCredito':this.forma.value.PrecioCredito,
+ 'Activo':this.forma.value.Activo,
+ 'UbicacionId':this.forma.value.UbicacionId
+}
+
+console.log(object);
+
+
     }
+
+
 
     // tslint:disable-next-line:eofline
 }

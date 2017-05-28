@@ -35,6 +35,7 @@ import { TipoventaComponent } from './Components/tipoventa/tipoventa.component';
 import { TipoventaNuevoComponent } from './Components/tipoventa/tipoventa.nuevo.component';
 import { ProveedorComponent } from './Components/proveedor/proveedor.component';
 import { ProductoComponent } from './Components/producto/producto.component';
+import { ProductoNuevoComponent } from './Components/producto/producto.nuevo.component';
 import { UbicacionComponent } from './Components/ubicacion/ubicacion.component';
 import { TipounidadComponent } from './Components/tipounidad/tipounidad.component';
 
@@ -63,7 +64,8 @@ import { TipounidadComponent } from './Components/tipounidad/tipounidad.componen
     UbicacionNuevaComponent,
     UbicacionEditaComponent,
     TipounidadComponent,
-    TipounidadNuevoComponent
+    TipounidadNuevoComponent,
+    ProductoNuevoComponent
   ],
   imports: [
     SimpleNotificationsModule.forRoot(),

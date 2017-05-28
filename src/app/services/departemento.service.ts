@@ -61,6 +61,7 @@ export class DepartamentoService {
     // headers.append('Authorization', `Token ${this._localStorage.get('token')}`);
     const options = new RequestOptions({ headers: headers, method: RequestMethod.Get });
     const data = {
+      'DepartamentoId':0,
       'Descripcion': obj.Descripcion,
       'Activo': obj.Activo
     };

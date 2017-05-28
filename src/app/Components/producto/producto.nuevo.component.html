@@ -1,0 +1,198 @@
+<section class="content-header">
+    <h1>
+        {{Tittle}}
+        <small>catálogo</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="panel">
+        <div class="panel-body">
+
+
+            <form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+
+                <div class="form-group" [ngClass]="{'has-error':!forma.controls['UPC'].valid}">
+                    <label class="control-label">UPC</label>
+                    <input class="form-control" type="text" placeholder="UPC" formControlName="UPC">
+                    <span class="help-block" *ngIf="forma.get('UPC').errors?.required">
+           El UPC es necesario
+           </span>
+                </div>
+
+
+                <div class="form-group" [ngClass]="{'has-error':!forma.controls['Nombre'].valid}">
+                    <label class="control-label">Descripción</label>
+                    <input class="form-control" type="text" placeholder="Nombre" formControlName="Nombre">
+                    <span class="help-block" *ngIf="forma.get('Nombre').errors?.required">
+           El Nombre es necesario
+           </span>
+                </div>
+
+
+                <div class="form-group" [ngClass]="{'has-error':!forma.controls['Descripcion'].valid}">
+                    <label class="control-label">Descripción</label>
+                    <input class="form-control" type="text" placeholder="Descripcion" formControlName="Descripcion">
+                    <span class="help-block" *ngIf="forma.get('Descripcion').errors?.required">
+           La Descripcion es necesaria
+           </span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!forma.controls['CategoriaId'].valid}">
+                    <label class="control-label">Categoria</label>
+                    <select formControlName="CategoriaId" class="form-control">
+            <option value="">Selecciona</option>
+          <option *ngFor="let c of categorias" [ngValue]="c.CategoriaId" >{{c.Descripcion}}</option>
+</select>
+                    <span class="help-block" *ngIf="forma.get('CategoriaId').errors?.required">
+            La categoria es necesaria
+            </span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!forma.controls['TipoVentaId'].valid}">
+                    <label class="control-label">Tipo Venta</label>
+                    <select formControlName="TipoVentaId" class="form-control">
+            <option value="">Selecciona</option>
+          <option *ngFor="let c of tipoventas" [ngValue]="c.TipoVentaId" >{{c.Descripcion}}</option>
+</select>
+                    <span class="help-block" *ngIf="forma.get('TipoVentaId').errors?.required">
+            El tipo de venta es necesario
+            </span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!forma.controls['UnidadId'].valid}">
+                    <label class="control-label">Unidad</label>
+                    <select formControlName="UnidadId" class="form-control">
+            <option value="">Selecciona</option>
+          <option *ngFor="let c of unidades" [ngValue]="c.UnidadId" >{{c.Descripcion}}</option>
+            </select>
+                    <span class="help-block" *ngIf="forma.get('UnidadId').errors?.required">
+            El tipo de unidad es necesario
+            </span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!forma.controls['UbicacionId'].valid}">
+                    <label class="control-label">Ubicaciòn</label>
+                    <select formControlName="UbicacionId" class="form-control">
+            <option value="">Selecciona</option>
+          <option *ngFor="let c of ubicaciones" [ngValue]="c.UbicacionId" >{{c.Descripcion}}</option>
+</select>
+                    <span class="help-block" *ngIf="forma.get('UbicacionId').errors?.required">
+        La Ubicaciòn es necesaria
+            </span>
+                </div>
+
+<div class="form-group" [ngClass]="{'has-error':!forma.controls['CantidadMinima'].valid}">
+                    <label class="control-label">Cantidad Minima</label>
+                    <input class="form-control" type="text" placeholder="CantidadMinima" formControlName="CantidadMinima">
+                    <span class="help-block" *ngIf="forma.get('CantidadMinima').errors?.required">
+           La cantidad Minima es necesaria
+           </span>
+                </div>
+
+
+  <div class="form-group row">
+                    <label class="col-2 col-form-label">status</label>
+                    <div class="col-8">
+                        <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" formControlName="Activo">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Activo</span>
+</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Serie</label>
+                    <div class="col-8">
+                        <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" formControlName="Serie">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Aplica Serie</span>
+</label>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Se puede devolver</label>
+                    <div class="col-8">
+                        <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" formControlName="DevMatriz">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Devolver</span>
+</label>
+                    </div>
+                </div>
+
+<div class="form-group" [ngClass]="{'has-error':!forma.controls['CantidadOrden'].valid}">
+                    <label class="control-label">Cantidad minima para generar orden de compra</label>
+                    <input class="form-control" type="text" placeholder="CantidadOrden" formControlName="CantidadOrden">
+                    <span class="help-block" *ngIf="forma.get('CantidadOrden').errors?.required">
+           La cantidad es necesaria
+           </span>
+                </div>
+
+<div class="form-group" [ngClass]="{'has-error':!forma.controls['Precioventa'].valid}">
+                    <label class="control-label">Precio de venta</label>
+                    <input class="form-control" type="text" placeholder="Precioventa" formControlName="Precioventa">
+                    <span class="help-block" *ngIf="forma.get('Precioventa').errors?.required">
+           La precio de venta es necesaria
+           </span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!forma.controls['PrecioCredito'].valid}">
+                    <label class="control-label">Precio de venta</label>
+                    <input class="form-control" type="text" placeholder="PrecioCredito" formControlName="PrecioCredito">
+                    <span class="help-block" *ngIf="forma.get('PrecioCredito').errors?.required">
+           La precio de crèdito  es necesario
+           </span>
+                </div>
+
+
+
+
+
+
+                <!--<div class="form-group row">
+                    <label class="col-2 col-form-label">Activo</label>
+                    <div class="col-8">
+                        <label class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" formControlName="Activo">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Activo</span>
+</label>
+                    </div>
+                </div>-->
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">&nbsp;</label>
+                    <div class="input-group col-md-8">
+                        <button type="submit" class="btn bg-purple margin">
+        Guardar
+      </button>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">&nbsp;</label>
+                    <div class="input-group col-md-8">
+                        <button type="button" class="btn bg-default" [routerLink]="['/home/categoria']">
+        Cancelar
+      </button>
+                    </div>
+                </div>
+
+                {{forma.valid}} {{forma.status}}
+            </form>
+
+        </div>
+    </div>
+
+
+
+</section>
