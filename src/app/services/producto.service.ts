@@ -47,16 +47,17 @@ export class ProductoService {
       'EspecificacionId': obj.EspecificacionId,
       'UnidadId': obj.UnidadId,
       'CantidadMinima': obj.CantidadMinima,
-      'Credito': obj.Credito,
       'Serie': obj.Serie,
       'DevMatriz': obj.DevMatriz,
       'CantidadOrden': obj.CantidadOrden,
       'FechaIngreso': '02/05/2017',
       'UbicacionId': 1,
+      'Activo': obj.Activo,
       'FechaBaja': '02/05/2017',
       'Precioventa': obj.UbicacionId,
       'PrecioCredito': obj.PrecioCredito
     };
+    console.log(data);
     const headers = new Headers();
     headers.append('Content-Type', 'application/JSON');
     const options = new RequestOptions({ headers: headers, method: RequestMethod.Post });

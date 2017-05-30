@@ -1,8 +1,10 @@
+import { ProductoService } from './../../services/producto.service';
 import { UbicacionService } from './../../services/ubicacion.service';
 import { TipounidadService } from './../../services/tipounidad.service';
 import { CategoriaService } from './../../services/categoria.service';
 import { TipoventaService } from './../../services/tipoventa.service';
 import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -16,17 +18,25 @@ export class ProductoComponent implements OnInit {
   ubicaciones: any[]
   unidades: any[]
   tipoventas: any[]
-
+  productos: any[]
   constructor(
     private _UbicacionService: UbicacionService,
     private _TipounidadService: TipounidadService,
     private _CategoriaService: CategoriaService,
-    private _TipoventaService: TipoventaService
+    private _TipoventaService: TipoventaService,
+    private _ProductoService: ProductoService
 
 
   ) { }
 
   ngOnInit() {
+
+    this._ProductoService.GetProductos().subscribe(data => {
+      this.productos = data;
+      console.log(data);
+    },
+      error => { });
+
     this._UbicacionService.GetUbicaciones().subscribe(data => {
       this.ubicaciones = data;
     })
