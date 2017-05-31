@@ -37,6 +37,45 @@ export class ProductoService {
       .map(res => res.json());
   }
 
+  public EditProducto(obj,id) {
+    const data = {
+      'ProductoId':obj.ProductoId,
+      'UPC': obj.UPC,
+      'Nombre': obj.Nombre,
+      'Descripcion': obj.Descripcion,
+      'CategoriaId': obj.CategoriaId,
+      'TipoVentaId': obj.TipoVentaId,
+      'EspecificacionId': obj.EspecificacionId,
+      'UnidadId': obj.UnidadId,
+      'CantidadMinima': obj.CantidadMinima,
+      'Serie': obj.Serie,
+      'DevMatriz': obj.DevMatriz,
+      'CantidadOrden': obj.CantidadOrden,
+      'FechaIngreso': '02/05/2017',
+      'UbicacionId': 1,
+      'Activo': obj.Activo,
+      'FechaBaja': '02/05/2017',
+      'Precioventa': obj.UbicacionId,
+      'PrecioCredito': obj.PrecioCredito
+    };
+    console.log(data);
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/JSON');
+    const options = new RequestOptions({ headers: headers, method: RequestMethod.Put });
+    const body = JSON.stringify(data);
+    const url = this._GlobalurlService.getUrl() + '/api/Producto/'+id;
+    return this.http.put(url, body, options)
+      .map(res => res)
+      .catch(err => err);
+  }
+
+
+
+
+
+
+
+
   public AddProducto(obj) {
     const data = {
       'UPC': obj.UPC,

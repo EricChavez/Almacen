@@ -24,6 +24,7 @@
           <th>Categoria</th>
           <th>Precio Credito</th>
           <th>Precio Venta</th>
+          <th>Opciones<th>
         </thead>
         <tbody>
           <tr *ngFor="let item of productos | paginate: { itemsPerPage: 10, currentPage: p }">
@@ -33,7 +34,12 @@
             <td>{{item.Categoria.Nombre}}</td>
             <td>{{item.Categoria.PrecioCredito}}</td>
             <td>{{item.Categoria.Precioventa}}</td>
+            <td>
+               <button type="button" class="btn btn-warning btn-sm"
+            [routerLink]="['/home/editaproducto',item.ProductoId]">
+             <i class="fa fa-edit"></i></button>
 
+            </td>
           </tr>
         </tbody>
       </table>

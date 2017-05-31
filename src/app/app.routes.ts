@@ -1,3 +1,4 @@
+import { ProductoEditaComponent } from './Components/producto/producto.edita.component';
 import { TipounidadNuevoComponent } from './Components/tipounidad/tipounidad.nuevo.component';
 import { TipounidadComponent } from './Components/tipounidad/tipounidad.component';
 import { UbicacionEditaComponent } from './Components/ubicacion/ubicacion.edita.component';
@@ -34,15 +35,16 @@ const APP_ROUTES: Routes = [
             { path: 'nuevotipoventa', component: TipoventaNuevoComponent },
             { path: 'editatipoventa/:id', component: TipoventaEditaComponent },
             { path: 'producto', component: ProductoComponent },
+            { path: 'editaproducto/:id', component: ProductoEditaComponent },
             { path: 'nuevoproducto', component: ProductoNuevoComponent },
             { path: 'ubicacion', component: UbicacionComponent },
-             { path: 'nuevaubicacion', component: UbicacionNuevaComponent },
-             { path: 'editaubicacion/:id', component: UbicacionEditaComponent },
-             { path: 'unidad', component: TipounidadComponent },
-              { path: 'nuevotipounidad', component: TipounidadNuevoComponent },
-             { path: 'editatipounidad/:id', component: TipounidadComponent }
+            { path: 'nuevaubicacion', component: UbicacionNuevaComponent },
+            { path: 'editaubicacion/:id', component: UbicacionEditaComponent },
+            { path: 'unidad', component: TipounidadComponent },
+            { path: 'nuevotipounidad', component: TipounidadNuevoComponent },
+            { path: 'editatipounidad/:id', component: TipounidadComponent }
 
-             
+
         ]
     },
     { path: '**', pathMatch: 'full', redirectTo: 'home' },
